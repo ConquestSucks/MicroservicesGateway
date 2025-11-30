@@ -1,0 +1,15 @@
+@ApiGateway_HostAddress = http://localhost:5000
+@token =
+
+
+### Получение JWT токена
+POST {{ApiGateway_HostAddress}}/api/auth/login?username=testuser
+
+### Получение профиля пользователя (требует авторизацию)
+GET {{ApiGateway_HostAddress}}/api/profile/1
+Authorization: Bearer {{token}}
+
+### Проверка метрик Prometheus
+GET {{ApiGateway_HostAddress}}/metrics
+
+###
